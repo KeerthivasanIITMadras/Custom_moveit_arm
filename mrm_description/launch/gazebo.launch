@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="false" /> /</include>
+    <group ns="/mrm">
+
+        <!-- Robot model -->
+        <param name="robot_description"
+            command="$(find xacro)/xacro --inorder '$(find mrm_description)/urdf/mrm.xacro'" />
+        <arg name="x" default="0" />
+        <arg name="y" default="0" />
+        <arg name="z" default="0.5" />
+
+        <!-- Spawn the robot model -->
+        <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+            args="-urdf -param robot_description -model mrm -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+        <rosparam command="load" file="$(find mrm_description)/config/joints.yaml" />
+
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" output="log"
+            respawn="false" respawn_delay="0" ns="/mrm"
+            args="--namespace=/mrm
+            joint_state_controller
+            mrm_arm_controller
+            --timeout 60">
+
+        </node>
+    </group>
+
+
+</launch>

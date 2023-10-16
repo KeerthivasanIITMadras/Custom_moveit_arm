@@ -1,0 +1,48 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# joint1_position_controller:
+#   type: position_controllers/JointTrajectoryController
+#   joint: base_link_link_01
+#   pid: { p: 100, i: 50, d: 70 }
+
+# joint2_position_controller:
+#   type: position_controllers/JointTrajectoryController
+#   joint: link_01_link_02
+#   pid: { p: 100, i: 50, d: 70 }
+
+# joint3_position_controller:
+#   type: position_controllers/JointTrajectoryController
+#   joint: link_02_link_03
+#   pid: { p: 100, i: 50, d: 70 }
+
+# joint4_position_controller:
+#   type: position_controllers/JointTrajectoryController
+#   joint: link_03_link_04
+#   pid: { p: 100, i: 50, d: 70 }
+
+# joint5_position_controller:
+#   type: position_controllers/JointTrajectoryController
+#   joint: link_04_link_05
+#   pid: { p: 100, i: 50, d: 70 }
+
+mrm_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - base_link_link_01
+    - link_01_link_02
+    - link_02_link_03
+    - link_03_link_04
+    - link_04_link_05
+
+  gains:
+    base_link_link_01: { p: 14000, d: 320, i: 16000.0, i_clamp: 1000 }
+    link_01_link_02: { p: 100000, d: 600, i: 100000, i_clamp: 1000 }
+    link_02_link_03: { p: 100000.0, d: 1000, i: 100000.0, i_clamp: 1000 }
+    link_03_link_04: { p: 100000.0, d: 10000, i: 100000.0, i_clamp: 1000 }
+    link_04_link_05: { p: 24000.0, d: 200.0, i: 64000.0, i_clamp: 1000 }
+
+  constraints:
+    goal_time: 2.0
+  state_publish_rate: 25

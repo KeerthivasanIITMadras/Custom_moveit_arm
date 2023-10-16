@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/keerthivasan/keerthi/catkin/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/keerthivasan/keerthi/catkin/src/aruco_ros/aruco/include/**",
+        "/home/keerthivasan/keerthi/catkin/src/aruco_mapping/include/**",
+        "/home/keerthivasan/keerthi/catkin/src/aruco_ros/aruco_ros/include/**",
+        "/home/keerthivasan/keerthi/catkin/src/Mastering-ROS-for-Robotics-Programming-Third-edition/Chapter12/plugin_calculator/include/**",
+        "/home/keerthivasan/keerthi/catkin/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/keerthivasan/keerthi/catkin/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

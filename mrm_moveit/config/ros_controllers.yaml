@@ -1,0 +1,52 @@
+moveit_sim_hw_interface:
+  joint_model_group: controllers_intitial_group_
+  joint_model_group_pose: controllers_intitial_pose_
+
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+
+hardware_interface:
+  joints:
+    - base_link_link_01
+    - link_01_link_02
+    - link_02_link_03
+    - link_03_link_04
+    - link_04_link_05
+  sim_control_mode: 1
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+mrm_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - base_link_link_01
+    - link_01_link_02
+    - link_02_link_03
+    - link_03_link_04
+    - link_04_link_05
+
+  gains:
+    base_link_link_01: { p: 100, d: 50, i: 10.0, i_clamp: 10000 }
+    link_01_link_02: { p: 100, d: 50, i: 10.0, i_clamp: 10000 }
+    link_02_link_03: { p: 100, d: 50, i: 10.0, i_clamp: 10000 }
+    link_03_link_04: { p: 100, d: 50, i: 10.0, i_clamp: 10000 }
+    link_04_link_05: { p: 100, d: 50, i: 10.0, i_clamp: 10000 }
+
+  constraints:
+    goal_time: 2.0
+  state_publish_rate: 25
+
+controller_list:
+  - name: mrm_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - base_link_link_01
+      - link_01_link_02
+      - link_02_link_03
+      - link_03_link_04
+      - link_04_link_05
