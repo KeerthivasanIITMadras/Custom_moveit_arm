@@ -19,5 +19,7 @@ The below image shoes how the gazebo world with arm looks(The configuration can 
 
 <p>Here is one of the planning executions</p>
 
-https://github.com/KeerthivasanIITMadras/Custom_moveit_arm/assets/94305617/4df0ec21-4743-4b88-a752-c1d2b687c88d
+
+
+https://github.com/KeerthivasanIITMadras/Custom_moveit_arm/assets/94305617/68b9fb1c-0db4-4fff-ab43-b6bfc56078f3
 
