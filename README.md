@@ -6,3 +6,9 @@ To run the Gazebo world containing the arm, use the following command:
 
 ```bash
 roslaunch mrm_description gazebo.launch
+```
+To launch the moveit planner interface, use the following command:
+
+```bash
+roslaunch mrm_moveit moveit_planning_execution.launch
+```
