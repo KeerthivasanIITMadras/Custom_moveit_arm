@@ -14,4 +14,5 @@ roslaunch mrm_moveit moveit_planning_execution.launch
 ```
 
 The below image shoes how the gazebo world with arm looks(The configuration can be adjusted accordingly, after some forward kinematics planning)
+
 ![Screenshot from 2023-10-16 18-58-27](https://github.com/KeerthivasanIITMadras/Custom_moveit_arm/assets/94305617/899e495f-fa43-4e16-97df-43689e1fe24d)
